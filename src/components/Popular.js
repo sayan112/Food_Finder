@@ -19,7 +19,7 @@ const Popular = () => {
     }
     else{
  const api = await fetch(
-   `https://api.spoonacular.com/recipes/random?apiKey=dab2bf4d50944c13a9543d07f9ea1155&number=19`
+   `https://api.spoonacular.com/recipes/random?apiKey=7099546be1664ce38344d9547f46d46b&number=19`
  );
 
  const data = await api.json();
@@ -32,7 +32,7 @@ const Popular = () => {
   };
  return (
    <div className="wrapper">
-     <h3>Popular All around 🎉</h3>
+     <h3 className="txt">Popular All around 😋</h3>
      <Splide  options={{
       perPage:4,
       arrows:false,

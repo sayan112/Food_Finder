@@ -18,7 +18,7 @@ const Veggie = () => {
         setveg(JSON.parse(check));
       } else {
         const api = await fetch(
-          `https://api.spoonacular.com/recipes/random?apiKey=dab2bf4d50944c13a9543d07f9ea1155&number=19&tags=vegetarian`
+          `https://api.spoonacular.com/recipes/random?apiKey=7099546be1664ce38344d9547f46d46b&number=19&tags=vegetarian`
         );
 
         const data = await api.json();
@@ -29,7 +29,7 @@ const Veggie = () => {
     };
   return (
     <div className="wrapper">
-      <h3> All veg dishes around 🎉</h3>
+      <h3 className="txt"> All veg Items🥕🍅🫑</h3>
       <Splide
         options={{
           perPage: 3,
