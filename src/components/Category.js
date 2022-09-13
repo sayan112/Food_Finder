@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
-import { GiNoodles, GiChopsticks, GiCakeSlice } from "react-icons/gi";
+import { GiNoodles, GiChopsticks } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 const Category = () => {
   return (
