@@ -1,40 +1,35 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // import { motion } from "framer-motion";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 const Cuisine = () => {
   const [Cuisine, setCuisine] = useState([]);
   let params = useParams();
 
   const getCuisine = async (nameofcuisine) => {
+    const check = localStorage.getItem(nameofcuisine);
 
- const check = localStorage.getItem(nameofcuisine);
+    if (check) {
+      setCuisine(JSON.parse(check));
+    } else {
+      const Apidata = await fetch(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=7099546be1664ce38344d9547f46d46b&cuisine=${nameofcuisine}`
+      );
+      console.log(nameofcuisine);
 
-  if(check) 
-  {
-    setCuisine(JSON.parse(check));
-  }
-  else{
-  const Apidata = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=7099546be1664ce38344d9547f46d46b&cuisine=${nameofcuisine}`
-  
-  );
-     console.log(nameofcuisine);
-
-    const recipes = await Apidata.json();
-     localStorage.setItem(nameofcuisine, JSON.stringify(recipes.results));
-    console.log(recipes);
-    setCuisine(recipes.results);
-    console.log(recipes.results);
-  }
-  
-  
+      const recipes = await Apidata.json();
+      localStorage.setItem(nameofcuisine, JSON.stringify(recipes.results));
+      console.log(recipes);
+      setCuisine(recipes.results);
+      console.log(recipes.results);
+    }
   };
   useEffect(() => {
     getCuisine(params.type);
     console.log(params.type);
   }, [params.type]);
   return (
+
     <Grid>
       {Cuisine.map((recipe) => {
         return (
@@ -45,6 +40,7 @@ const Cuisine = () => {
       })}
     </Grid>
   );
+  
 };
 
 const Grid = styled.div`

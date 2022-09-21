@@ -30,6 +30,7 @@ h3{
 /* import all scss files right here :) */
 @import "./styles/popular.scss";
 @import "./styles/category.scss";
+@import  "./styles/search.scss";
 
 /* @import "./Player.scss";
 @import "./song.scss";

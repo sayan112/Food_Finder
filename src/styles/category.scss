@@ -1,10 +1,32 @@
-.categorydiv{
-    display: flex;
+.categorydiv {
+     display: flex;
     align-items: center;
-    justify-content:space-evenly;
-    margin: 2rem 0rem;
+justify-content: center;
+}
+.slink{
+    display: flex;
+     flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    border-radius: 50%;
+    margin-right: 2rem;
     padding: 1rem;
+    background: linear-gradient(35deg,#494949,#313131);
+     width: 8rem;
+     height: 8rem;
+     cursor: pointer;
+      transform: scale(0.8);
 }
 .fa{
-    font-size: 3rem;
+    font-size: 5rem;
+     color:#cb93ff;
+}
+ .slink h4{
+     font-size: 1rem;
+    color: azure;
+}
+
+
+.slink:active{
+background:linear-gradient(to right, #ea6b6b, #eaeaea);
 }
